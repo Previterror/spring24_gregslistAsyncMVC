@@ -11,7 +11,6 @@ export class HousesController {
 
     }
 
-
     async getHouses() {
         try {
             await housesService.getHouses()
@@ -29,5 +28,17 @@ export class HousesController {
         setHTML('houseslist', houseListContent)
     }
 
+    async createHouse() {
+        try {
+            event.preventDefault()
+            console.log('listing a house');
+
+        } catch (error) {
+            console.error('❗', error)
+            Pop.toast("Couldn't Create House, please try again later", 'error')
+        }
+
+
+    }
 
 }
