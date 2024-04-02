@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js"
 import { housesService } from "../services/HousesService.js"
+import { getFormData } from "../utils/FormHandler.js"
 import { Pop } from "../utils/Pop.js"
 import { setHTML } from "../utils/Writer.js"
 
@@ -32,6 +33,9 @@ export class HousesController {
         try {
             event.preventDefault()
             console.log('listing a house');
+            const form = event.target
+            const houseData = getFormData(form)
+            console.log('house data', houseData);
 
         } catch (error) {
             console.error('❗', error)
