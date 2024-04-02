@@ -36,6 +36,7 @@ export class HousesController {
             const form = event.target
             const houseData = getFormData(form)
             console.log('house data', houseData);
+            await housesService.createHouse(houseData)
 
         } catch (error) {
             console.error('❗', error)
